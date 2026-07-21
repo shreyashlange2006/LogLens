@@ -1,72 +1,82 @@
 # 🛡 LogLens
 
-## Security Log Analysis Platform
+> Security Log Analysis Platform built with Flask + React
 
-LogLens is a Security Log Analysis platform built using Flask and React. It parses Apache and Nginx access logs, detects common cyber attacks, calculates risk scores, and provides an interactive dashboard for security analysis.
-
----
-
-# Features
-
-- Upload Apache/Nginx/Common Log Format (.log) files
-- Automatic log parsing
-- SQL Injection Detection
-- Brute Force Detection
-- Cross Site Scripting (XSS) Detection
-- Path Traversal Detection
-- Dynamic Risk Score
-- MITRE ATT&CK Mapping
-- IOC (Indicators of Compromise) Extraction
-- Security Health Score
-- Interactive Charts
-- Search & Filter Logs
-- Export CSV
-- Export JSON
-- Export PDF Report
+LogLens is a Security Information and Event Management (SIEM-lite) project that analyzes Apache, Nginx, and Common Log Format (CLF) logs to detect cyber attacks, calculate risk scores, and generate interactive security dashboards.
 
 ---
 
-# Technology Stack
+# 🚀 Features
 
-Frontend
-
-- React
-- Vite
-- Axios
-- Recharts
-
-Backend
-
-- Python
-- Flask
-- Flask-CORS
-
-Libraries
-
-- html2canvas
-- jsPDF
+- 📂 Upload Apache/Nginx/Common Log Format logs
+- 🔍 Automatic log parsing
+- 🛡 SQL Injection Detection
+- ⚡ Brute Force Detection
+- 📁 Path Traversal Detection
+- 💥 Cross-Site Scripting (XSS) Detection
+- 🎯 Dynamic Risk Scoring
+- 📊 Executive Security Dashboard
+- 📈 Interactive Charts
+- 🔎 Threat Explorer
+- 📋 Incident Investigation
+- 🧠 MITRE ATT&CK Mapping
+- 📄 Export Reports (CSV / JSON / PDF)
+- ❤️ Security Health Score
 
 ---
 
-# Project Structure
+# 🖥 Screenshots
+
+> Add screenshots here after taking them.
+
+Example:
 
 ```
-LogLens/
+screenshots/dashboard.png
+screenshots/about.png
+screenshots/report.png
+```
 
+---
+
+# 🏗 Project Architecture
+
+```
+React Frontend
+        │
+Axios API Calls
+        │
+Flask Backend
+        │
+Log Parser
+        │
+Threat Detection Engine
+        │
+Summary Generator
+        │
+Dashboard & Reports
+```
+
+---
+
+# 📂 Project Structure
+
+```
+LogLens
+│
 ├── app/
-│ ├── services/
-│ ├── static/
-│ ├── templates/
-│ ├── routes.py
-│ └── init.py
+│   ├── routes.py
+│   ├── services/
+│   └── templates/
 │
 ├── frontend/
-│ ├── src/
-│ │ ├── components/
-│ │ ├── pages/
-│ │ ├── services/
-│ │ └── App.jsx
+│   ├── src/
+│   ├── components/
+│   ├── pages/
+│   └── services/
 │
+├── signatures/
+├── demo_logs/
 ├── requirements.txt
 ├── run.py
 └── README.md
@@ -74,66 +84,54 @@ LogLens/
 
 ---
 
-# Installation
+# ⚙ Technologies Used
 
 ## Backend
 
-```bash
-python -m venv venv
-```
-
-Activate virtual environment
-
-Windows
-
-```bash
-venv\Scripts\activate
-```
-
-Install packages
-
-```bash
-pip install -r requirements.txt
-```
-
-Run backend
-
-```bash
-python run.py
-```
-
----
+- Python
+- Flask
+- Flask-CORS
 
 ## Frontend
 
+- React
+- Vite
+- Axios
+- Recharts
+
+## Others
+
+- Git
+- GitHub
+
+---
+
+# ▶ Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/shreyashlange2006/LogLens.git
+```
+
+Backend
+
+```bash
+pip install -r requirements.txt
+python run.py
+```
+
+Frontend
+
 ```bash
 cd frontend
-```
-
-Install packages
-
-```bash
 npm install
-```
-
-Run frontend
-
-```bash
 npm run dev
 ```
 
 ---
 
-# Supported Attacks
-
-- SQL Injection
-- Brute Force
-- Cross Site Scripting
-- Path Traversal
-
----
-
-# Export Formats
+# 📄 Export Support
 
 - CSV
 - JSON
@@ -141,22 +139,27 @@ npm run dev
 
 ---
 
-# Future Improvements
+# 🎯 Future Improvements
 
-- Authentication
 - Live Log Monitoring
-- Real-time Alerts
+- User Authentication
+- Email Alerts
+- Elasticsearch Integration
 - Machine Learning Detection
-- Email Notifications
+- Docker Deployment
 
 ---
 
-# Developer
+# 👨‍💻 Developer
 
-Shreyash Lange
+**Shreyash Lange**
 
 Diploma Student
 
-Security Software Engineering Project
+Security Software Engineering Intern Project
 
-2026
+---
+
+# 📜 License
+
+MIT License
