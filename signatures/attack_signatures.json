@@ -1,0 +1,38 @@
+{
+    "sql_injection": {
+        "severity": "High",
+        "patterns": [
+            "or 1=1",
+            "union select",
+            "drop table",
+            "insert into",
+            "delete from",
+            "information_schema",
+            "sleep(",
+            "benchmark("
+        ]
+    },
+
+    "xss": {
+        "severity": "High",
+        "patterns": [
+            "<script>",
+            "</script>",
+            "javascript:",
+            "onerror=",
+            "onload=",
+            "alert("
+        ]
+    },
+
+    "directory_traversal": {
+        "severity": "High",
+        "patterns": [
+            "../",
+            "..\\",
+            "/etc/passwd",
+            "boot.ini",
+            "win.ini"
+        ]
+    }
+}
