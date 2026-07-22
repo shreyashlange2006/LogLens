@@ -169,7 +169,7 @@ function AttackDetails({ log }) {
                             fontWeight: "600",
                         }}
                     >
-                        Detection Confidence
+                       Risk Level
                     </span>
 
                     <strong

@@ -43,6 +43,21 @@ function SummaryCards({ summary }) {
                     : "#16a34a",
             description: "Overall Threat Score",
         },
+        {
+            title: "Threat Confidence",
+            value: summary.threat_confidence,
+            suffix: "%",
+            icon: "🛡",
+            color:
+                summary.threat_confidence >= 90
+                    ? "#dc2626"
+                    : summary.threat_confidence >= 70
+                    ? "#ea580c"
+                    : summary.threat_confidence >= 40
+                    ? "#f59e0b"
+                    : "#16a34a",
+            description: "Likelihood of Malicious Activity",
+        },
     ];
 
     return (

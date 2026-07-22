@@ -1,0 +1,17 @@
+192.168.1.10 - - [12/Jul/2026:09:00:10 +0530] "POST /login HTTP/1.1" 401 512 "-" "Mozilla/5.0"
+192.168.1.10 - - [12/Jul/2026:09:00:20 +0530] "POST /login HTTP/1.1" 401 512 "-" "Mozilla/5.0"
+192.168.1.10 - - [12/Jul/2026:09:00:30 +0530] "POST /login HTTP/1.1" 401 512 "-" "Mozilla/5.0"
+
+185.22.10.5 - - [12/Jul/2026:09:01:15 +0530] "GET /../../etc/passwd HTTP/1.1" 404 256 "-" "curl/8.0"
+
+88.12.44.11 - - [12/Jul/2026:09:02:05 +0530] "GET /login?username=admin%27%20OR%201%3D1 HTTP/1.1" 200 700 "-" "sqlmap/1.6"
+
+103.44.55.66 - - [12/Jul/2026:09:03:40 +0530] "GET /search?q=<script>alert(1)</script> HTTP/1.1" 200 890 "-" "Mozilla/5.0"
+
+203.0.113.50 - - [12/Jul/2026:09:04:20 +0530] "GET /search?q=javascript:alert(1) HTTP/1.1" 200 650 "-" "Mozilla/5.0"
+
+198.51.100.25 - - [12/Jul/2026:09:05:10 +0530] "GET /../../../boot.ini HTTP/1.1" 404 320 "-" "curl/8.0"
+
+172.16.10.20 - - [12/Jul/2026:09:06:45 +0530] "GET /products?id=1 UNION SELECT username,password FROM users HTTP/1.1" 200 950 "-" "sqlmap/1.6"
+
+10.10.10.10 - - [12/Jul/2026:09:07:30 +0530] "GET /comment?msg=<img src=x onerror=alert(1)> HTTP/1.1" 200 780 "-" "Mozilla/5.0"
