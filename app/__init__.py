@@ -12,7 +12,11 @@ def create_app():
 
     app.config.from_object(Config)
 
-    CORS(app)
+    CORS(
+        app,
+        resources={r"/*": {"origins": "*"}},
+        supports_credentials=False,
+    )
 
     app.register_blueprint(main)
 

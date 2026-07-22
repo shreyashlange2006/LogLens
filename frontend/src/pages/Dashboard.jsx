@@ -60,7 +60,7 @@ function Dashboard() {
 
             <DashboardHeader summary={result?.summary} />
 
-            <WelcomeBanner />
+            {!result && <WelcomeBanner />}
 
             <QuickActions />
 
