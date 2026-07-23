@@ -1,92 +1,161 @@
-# 🛡️ LogLens v1.0
+# 🛡️ LogLens
 
 <p align="center">
 
-## Security Log Analysis Platform
+<img src="screenshots/logo.png" width="160">
 
-An AI-inspired Security Log Analysis Dashboard built using **React**, **Flask**, and **Python** for detecting cyber attacks, calculating risk scores, visualizing security analytics, and generating professional incident reports.
+# Security Log Analysis Platform
+
+### AI-Inspired Security Log Analysis Dashboard
+
+Detect • Analyze • Investigate • Report
+
+Built using **React**, **Flask**, **Python**, and **Recharts**
+
+---
+
+[![Frontend](https://img.shields.io/badge/Frontend-React-61DAFB?logo=react)]()
+[![Backend](https://img.shields.io/badge/Backend-Flask-000000?logo=flask)]()
+[![Python](https://img.shields.io/badge/Python-3.14-blue?logo=python)]()
+[![License](https://img.shields.io/badge/License-MIT-green)]()
+[![Status](https://img.shields.io/badge/Status-Stable-success)]()
+[![Version](https://img.shields.io/badge/Version-v1.0-orange)]()
 
 </p>
 
 ---
 
+# 🌐 Live Demo
+
+### Frontend (Vercel)
+
+🔗 https://loglens-security.vercel.app
+
+### Backend API (Railway)
+
+🔗 https://loglens-production.up.railway.app
+
+---
+
 # 📖 Overview
 
-LogLens is a Security Software Engineering project that analyzes Apache, Nginx, and Common Log Format (CLF) web server logs.
+LogLens is a lightweight Security Information and Event Management (SIEM)-inspired web application designed to analyze Apache, Nginx, and Common Log Format (CLF) web server logs.
 
-It automatically:
+The platform automatically parses uploaded log files, detects common cyber attacks using a signature-based detection engine, calculates risk scores, classifies severity levels, generates executive security summaries, visualizes security analytics, and exports professional investigation reports.
 
-- Detects known cyber attacks
-- Calculates risk scores
-- Classifies severity levels
-- Generates executive security summaries
-- Visualizes attack statistics
-- Investigates security incidents
-- Exports professional reports
+LogLens was developed as a cybersecurity portfolio project inspired by modern Security Operations Centers (SOC) and enterprise SIEM platforms such as:
 
-The project is inspired by modern SOC (Security Operations Center) dashboards and SIEM platforms.
+- Splunk
+- Wazuh
+- Elastic Security
+- Microsoft Sentinel
 
 ---
 
-# ✨ Features
+# ✨ Key Features
 
-✅ Apache Log Parser
-
-✅ Nginx Log Parser
-
-✅ Common Log Format (CLF) Support
-
-✅ Threat Detection Engine
-
-✅ Risk Score Calculation
-
-✅ Severity Classification
-
-✅ Executive Security Summary
-
-✅ Security Health Indicator
-
-✅ Threat Analytics Dashboard
-
-✅ Interactive Charts
-
-✅ IOC Investigation Panel
-
-✅ Incident Timeline
-
-✅ MITRE ATT&CK Mapping
-
-✅ CSV Export
-
-✅ JSON Export
-
-✅ Professional PDF Report Export
+| Module | Description |
+|---------|-------------|
+| 📄 Log Parser | Apache, Nginx & CLF Log Parsing |
+| 🚨 Threat Detection | SQL Injection, XSS, Brute Force, Path Traversal |
+| 🎯 Risk Scoring | Calculates risk score (0–100) |
+| 🛡 Threat Confidence | Confidence percentage for detections |
+| 📊 Executive Dashboard | Security summary cards |
+| 📈 Threat Analytics | Interactive charts using Recharts |
+| 🌍 Top Attackers | IP Intelligence |
+| 🔍 Incident Investigation | Complete IOC Analysis |
+| 🧠 MITRE Mapping | MITRE ATT&CK references |
+| 📋 Analyst Recommendations | Incident response suggestions |
+| 📄 PDF Reports | Professional investigation reports |
+| 📂 CSV Export | Export parsed logs |
+| 🗂 JSON Export | Export complete investigation |
 
 ---
 
-# 🛠 Technology Stack
+# 🏗️ System Architecture
 
-| Frontend | Backend | Charts | Language |
-|----------|----------|---------|----------|
-| React | Flask | Recharts | Python |
+```
 
-Additional Libraries
+                    User
+
+│
+
+▼
+
+React Frontend (Vercel)
+
+│
+
+Axios REST API
+
+│
+
+▼
+
+Flask Backend (Railway)
+
+│
+
+├── Parser Engine
+
+├── Threat Detector
+
+├── Risk Calculator
+
+├── Report Generator
+
+└── Summary Engine
+
+│
+
+▼
+
+Security Dashboard
+
+```
+
+---
+
+# 🛠️ Technology Stack
+
+| Layer | Technology |
+|--------|------------|
+| Frontend | React |
+| Backend | Flask |
+| Language | Python |
+| Charts | Recharts |
+| HTTP Client | Axios |
+| Styling | CSS |
+| Deployment | Vercel + Railway |
+
+### Python Libraries
+
+- Flask
+- Flask-CORS
+- Werkzeug
+- dotenv
+
+### Frontend Libraries
 
 - Axios
+- Recharts
 - React Icons
 - jsPDF
 - html2canvas
-- Flask-CORS
 
 ---
 
 # 📂 Project Structure
 
-```
+```text
 LogLens
 │
 ├── app
 │   ├── services
+│   │   ├── parser.py
+│   │   ├── detector.py
+│   │   └── upload_service.py
+│   │
 │   ├── templates
 │   ├── routes.py
 │   └── __init__.py
@@ -95,25 +164,28 @@ LogLens
 │   ├── src
 │   │   ├── components
 │   │   ├── pages
+│   │   ├── data
 │   │   ├── services
 │   │   └── assets
 │
 ├── demo_logs
-├── signatures
-├── screenshots
-├── uploads
+│   ├── clean_demo.log
+│   └── attack_demo.log
 │
-├── requirements.txt
+├── uploads
+├── screenshots
 ├── config.py
 ├── run.py
+├── requirements.txt
 └── README.md
+
 ```
 
 ---
 
 # 🚀 Installation
 
-## Clone Repository
+## Clone the Repository
 
 ```bash
 git clone https://github.com/shreyashlange2006/LogLens.git
@@ -123,9 +195,11 @@ cd LogLens
 
 ---
 
-## Backend
+# ⚙ Backend Setup
 
-Create Virtual Environment
+## Create Virtual Environment
+
+Windows
 
 ```bash
 python -m venv venv
@@ -133,25 +207,23 @@ python -m venv venv
 
 Activate
 
-Windows
-
 ```bash
 venv\Scripts\activate
 ```
 
-Install dependencies
+Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run Flask
+Run Backend
 
 ```bash
 python run.py
 ```
 
-Backend runs at
+Flask will start on
 
 ```
 http://127.0.0.1:5000
@@ -159,7 +231,7 @@ http://127.0.0.1:5000
 
 ---
 
-## Frontend
+# 💻 Frontend Setup
 
 Open another terminal
 
@@ -167,13 +239,13 @@ Open another terminal
 cd frontend
 ```
 
-Install packages
+Install Packages
 
 ```bash
 npm install
 ```
 
-Run Vite
+Run Development Server
 
 ```bash
 npm run dev
@@ -187,6 +259,95 @@ http://localhost:5173
 
 ---
 
+# 🌍 Deployment
+
+## Frontend
+
+Hosted using **Vercel**
+
+```
+https://loglens-security.vercel.app
+```
+
+---
+
+## Backend
+
+Hosted using **Railway**
+
+```
+https://loglens-production.up.railway.app
+```
+
+---
+
+# 📤 Upload Supported Log Formats
+
+LogLens currently supports
+
+- Apache Access Logs
+- Nginx Access Logs
+- Common Log Format (CLF)
+
+Example
+
+```log
+127.0.0.1 - - [11/Jul/2026:10:15:32 +0530] "GET / HTTP/1.1" 200 1024 "-" "Mozilla/5.0"
+```
+
+---
+
+# 🧠 Threat Detection Engine
+
+LogLens currently detects
+
+| Attack | Severity | Risk Score |
+|---------|----------|------------|
+| Brute Force | Critical | 95 |
+| SQL Injection | High | 90 |
+| Path Traversal | High | 80 |
+| Cross Site Scripting (XSS) | High | 70 |
+
+Each detected threat includes
+
+- Risk Score
+- Threat Confidence
+- Severity Classification
+- MITRE ATT&CK Reference
+- IOC Details
+- Security Recommendation
+- Incident Timeline
+
+---
+
+# 📊 Dashboard Overview
+
+After uploading a log file LogLens generates
+
+✅ Executive Summary
+
+✅ Security Health
+
+✅ Average Risk Score
+
+✅ Threat Confidence
+
+✅ Threat Analytics
+
+✅ Attack Distribution
+
+✅ Top Attackers
+
+✅ Security Log Explorer
+
+✅ Incident Investigation
+
+✅ IOC Intelligence
+
+✅ Analyst Recommendations
+
+---
+
 # 📸 Screenshots
 
 ## 🏠 Home Page
@@ -195,7 +356,7 @@ http://localhost:5173
 
 ---
 
-## 📊 Dashboard
+## 📊 Executive Dashboard
 
 ![Dashboard](screenshots/dashboard.png)
 
@@ -207,7 +368,7 @@ http://localhost:5173
 
 ---
 
-## 📄 Security Log Entries
+## 📄 Security Logs
 
 ![Logs](screenshots/logs.png)
 
@@ -219,113 +380,253 @@ http://localhost:5173
 
 ---
 
-## ℹ️ About Page
+## ℹ About Page
 
 ![About](screenshots/about.png)
 
 ---
 
-# 📊 Dashboard Modules
+# 📁 Demo Log Files
 
-- Executive Security Summary
-- Security Health Score
-- Threat Statistics
-- Attack Overview
-- Top Attackers
-- Security Log Explorer
-- Incident Investigation
-- IOC Panel
-- Analyst Notes
-- System Status
-- Quick Actions
+The repository contains sample log files for testing.
+
+| File | Purpose |
+|------|----------|
+| clean_demo.log | Safe traffic |
+| attack_demo.log | Multiple cyber attacks |
+
+Upload either file from the dashboard to explore LogLens features.
 
 ---
 
-# 📁 Report Export
+# 📤 Report Export
 
-LogLens exports security reports in
+LogLens can export investigation results as
 
 - CSV
 - JSON
 - PDF
 
-These reports can be used for:
+These reports are suitable for
 
-- Incident Documentation
 - Security Audits
+- Incident Documentation
 - SOC Investigation
-- Demonstrations
-- Academic Projects
+- Academic Demonstrations
+- Portfolio Presentation
 
 ---
 
-# 🧠 Attack Detection
+# 📡 API Endpoint
 
-Current Version Detects
+Upload Log File
 
-- Brute Force
-- SQL Injection
-- Cross Site Scripting (XSS)
-- Directory Traversal / Path Traversal
+```
+POST /upload
+```
 
-Each attack is assigned
+Returns
 
-- Risk Score
-- Severity
-- MITRE ATT&CK Information
-- IOC Details
-- Recommended Response
+```json
+{
+    "success": true,
+    "summary": {},
+    "logs": []
+}
+```
+
+The frontend automatically visualizes the response into charts and investigation panels.
 
 ---
 
-# 🎯 Future Roadmap
+# 🛣️ Roadmap
+
+LogLens is actively evolving. Planned improvements include:
+
+## Version 1.1
 
 - Real-time Log Monitoring
-- Live Alert Notifications
-- Machine Learning Threat Detection
+- Live Threat Alerts
+- Dark Mode
+- Improved PDF Reports
+- Enhanced Detection Rules
+
+---
+
+## Version 2.0
+
 - User Authentication
-- Dark / Light Themes
-- Cloud Deployment
-- Threat Intelligence Feed
+- Role-Based Access Control (RBAC)
+- Database Integration
+- Threat Intelligence Feeds
+- GeoIP Attack Map
+- AI-Assisted Threat Detection
+- Real-time Dashboard
+- WebSocket Live Monitoring
+
+---
+
+## Long-Term Vision
+
+- Cloud SIEM Platform
 - Elastic Stack Integration
+- VirusTotal API Integration
+- Suricata Rule Support
+- Sigma Rule Support
+- Docker Deployment
+- Kubernetes Deployment
+- Multi-user SOC Dashboard
+
+---
+
+# 📈 Version History
+
+| Version | Status | Release |
+|----------|--------|----------|
+| v1.0 | ✅ Stable | July 2026 |
+| v1.1 | 🚧 Planned | Future |
+| v2.0 | 🚀 Planned | Future |
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+If you'd like to improve LogLens:
+
+1. Fork the repository
+2. Create a feature branch
+
+```bash
+git checkout -b feature/my-feature
+```
+
+3. Commit your changes
+
+```bash
+git commit -m "Add new feature"
+```
+
+4. Push your branch
+
+```bash
+git push origin feature/my-feature
+```
+
+5. Open a Pull Request
+
+---
+
+# 🧪 Testing
+
+The project has been tested using:
+
+- ✅ Apache Logs
+- ✅ Nginx Logs
+- ✅ Common Log Format Logs
+
+Sample files included:
+
+```
+demo_logs/
+├── clean_demo.log
+└── attack_demo.log
+```
 
 ---
 
 # 👨‍💻 Developer
 
-**Shreyash Lange**
+## Shreyash Lange
+
+Diploma Engineering Student
+
+Cybersecurity Enthusiast
 
 Security Software Engineering Project
 
-Diploma Engineering Student
+### Connect
+
+GitHub
+
+https://github.com/shreyashlange2006
+
+LinkedIn
+
+(Add your LinkedIn URL here)
+
+Portfolio
+
+(Add portfolio URL when available)
 
 ---
 
 # 📜 License
 
-This project is released under the MIT License.
+This project is licensed under the MIT License.
 
----
-
-# ⭐ Support
-
-If you like this project, please consider giving it a ⭐ on GitHub.
+You are free to use, modify and distribute this software under the terms of the MIT License.
 
 ---
 
 # 🙏 Acknowledgements
 
-Inspired by
+This project was inspired by modern Security Operations Centers (SOC) and enterprise security platforms.
 
+Special thanks to:
+
+- MITRE ATT&CK Framework
+- OWASP
 - Splunk
 - Wazuh
-- ELK Stack
-- MITRE ATT&CK
-- OWASP
-- Security Operations Centers (SOC)
+- Elastic Security
+- Microsoft Sentinel
+- Flask
+- React
+- Railway
+- Vercel
 
 ---
 
-## 🚀 LogLens v1.0
+# ⭐ Support
 
-Built with ❤️ using React + Flask + Python
+If you found this project useful, please consider giving it a ⭐ on GitHub.
+
+It helps the project reach more developers and supports future improvements.
+
+---
+
+# 📬 Feedback
+
+Suggestions, feature requests and bug reports are always welcome.
+
+Feel free to open an Issue or submit a Pull Request.
+
+---
+
+# 🚀 Live Demo
+
+Frontend
+
+https://loglens-security.vercel.app
+
+Backend API
+
+https://loglens-production.up.railway.app
+
+---
+
+<p align="center">
+
+## 🛡️ LogLens
+
+### Detect • Analyze • Investigate • Report
+
+Built with ❤️ using **React**, **Flask**, **Python**, and **Recharts**
+
+**Version 1.0**
+
+© 2026 Shreyash Lange
+
+</p>

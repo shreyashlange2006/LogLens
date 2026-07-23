@@ -1,0 +1,9 @@
+LogLens
+
+Version : 1.0.0
+
+Release : Stable
+
+Date : July 2026
+
+Developer : Shreyash Lange
